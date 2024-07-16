@@ -73,6 +73,14 @@ footer{
   background: #000;
   /* justify-content: space-around; */
 }
+.footer_tags a{
+color: white;
+text-decoration: dotted;
+}
+.footer_tags a:hover{
+  color: aqua;
+  text-decoration: dashed;
+}
 /* testimonial  */
 
 .testimonial {
@@ -91,6 +99,22 @@ footer{
   width: 30%;
   height: 7em;
 }
-/* @media only screen and (max-width: 600px) {
-
-} */
+@media only screen and (max-width: 600px) {
+  nav{
+    color: #f9f8f8;
+    background: rgba(43, 39, 39, 0.245);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  transition: 0.6s;
+  padding: 40px 100px;
+  z-index: 10000;
+  overflow: visible;
+  }
+  nav.sticky{
+  padding: 5px 0px;
+  background-color: rgb(0, 0, 0);
+  color: #f9f8f8;
+  }
+  nav.sticky ul li a{
+    color: rgb(255, 255, 255);
+  }
+}
