@@ -65,6 +65,7 @@ nav.sticky ul li a{
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  background: #aeaeae;
 }
 
 footer{
@@ -99,6 +100,10 @@ text-decoration: dotted;
   width: 30%;
   height: 7em;
 }
+/* .btn-close{
+background: #ffffff;
+
+} */
 @media only screen and (max-width: 600px) {
   nav{
     color: #f9f8f8;
@@ -132,5 +137,11 @@ text-decoration: dotted;
   .info-wrap iframe {
   width: 100%;
   height: 20em;
+  }
+
+}
+@media only screen and (min-width: 600px){
+  .carousel1{
+    display: none;
   }
 }
