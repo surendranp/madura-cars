@@ -1,6 +1,7 @@
 /* whatsapp and call button float start */
 body{
   font-family: "Poppins", Arial, sans-serif;
+  /* overflow: hidden; */
 }
 .float-icon {
   position: fixed;
