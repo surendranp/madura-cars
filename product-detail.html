@@ -15,20 +15,90 @@
     body{
         background: #000;
     }
+    /* .thumbnail-img {
+            cursor: pointer;
+            margin: 5px;
+        }
+        .thumbnail-img img {
+            width: 50px;
+            height: 50px;
+            
+        }
+        
+        .selected-thumbnail {
+            border: 5px solid #007bff;
+            -webkit-box-shadow: 2px 2px 19px -1px rgba(0,0,0,0.49);
+-moz-box-shadow: 2px 2px 19px -1px rgba(0,0,0,0.49);
+box-shadow: 2px 2px 19px -1px rgba(0,0,0,0.49);   
+transition: 0.5s all ease-in-out;   
+} */      
+ 
+.thumbnail-img {
+    cursor: pointer;
+            margin: 5px;
+        }
+        .thumbnail-img img {
+            width: 100px;
+            height: 100px;
+        }
+        .selected-thumbnail {
+            border: 5px solid #ffe600;
+            -webkit-box-shadow: 2px 2px 19px -1px rgba(0,0,0,0.49);
+            -moz-box-shadow: 2px 2px 19px -1px rgba(0,0,0,0.49);
+            box-shadow: 2px 2px 19px -1px rgba(0,0,0,0.49);   
+            /* transition: 0.5s all ease-in-out;    */
+}
+        .product-images img {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        .fade-left {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        .fade-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        /* .container-fluid{
+            width: 80%;
+            height: 50em;
+        } */
+        /* .product-images img{
+            width: 100%;
+            height: 20em;
+        }
+ .product-images{
+    width: 50%;
+    height: 10em;    
+ } */
 </style>
 </head>
 <body>
 
-<div class="container mt-5 " >
-    <div id="productDetail"  class="card d-flex flex-wrap" style="display: flex;flex-direction: row; justify-content: center; align-items: center;margin-top: 10%;">
-        <img id="productImage" src="" class="card-img-top w-50" alt="Product Image">
-        <div class="card-body" style="display: flex;flex-direction: column; justify-content: center; align-items: center;">
+<div class="container-fluid mt-5 mb-5" >
+    <div id="productDetail"  class="card d-flex flex-wrap flex-row justify-content-center text-center">
+        <div class="col-md-6 product-images ">
+        <img id="productImage" src="" class="pt-5 ps-5 pe-5 pb-5 w-100" alt="Product Image">
+       
+    </div>
+    
+        <div class=" col-md-6" style="display: flex;flex-direction: column; justify-content: center; align-items: center;">
+            <div class="thumbnail-images d-flex flex-row justify-content-center">
+                <img id="thumb1" src="" class="thumbnail-img img-fluid" width="30%" alt="Thumbnail 1" onclick="changeImage(this)">
+                <img id="thumb2" src="" class="thumbnail-img img-fluid" width="30%" alt="Thumbnail 2" onclick="changeImage(this)">
+                <img id="thumb3" src="" class="thumbnail-img img-fluid" width="10%" alt="Thumbnail 3" onclick="changeImage(this)">
+            </div>
             <h5 id="productName" style="text-transform: capitalize; font-size: 32px;" class="card-title"></h5>
             <p id="productmodal"></p>
+            <p id="productnumber"></p>
             <p id="productPrice" class="card-text"></p>
+            <p id="productowner" class="card-text"></p>
+            <p id="productfc" class="card-text"></p>
+            <p id="productinsurance" class="card-text"></p>
             <p id="productDescription" class="card-text">This is a detailed description of the product.</p>
             <a href="index.html" class="btn btn-secondary mt-3">Back to Products</a>
 
+ 
         </div>
     </div>
 </div>
@@ -40,12 +110,62 @@
         const price = urlParams.get('price');
         const img = urlParams.get('img');
         const modal=urlParams.get('modal');
+        const fc=urlParams.get('fc');
+        const insurance=urlParams.get('insurance');
+        const owner=urlParams.get('owner');
+        const number=urlParams.get('number');
+
+
+
+
+        const thumb1 = urlParams.get('thumb1');
+        const thumb2 = urlParams.get('thumb2');
+        const thumb3 = urlParams.get('thumb3');
 
         document.getElementById('productName').innerText = name;
         document.getElementById('productmodal').innerHTML=modal;
-        document.getElementById('productPrice').innerText = `$${price}`;
+        document.getElementById('productnumber').innerHTML=number;
+        document.getElementById('productowner').innerHTML=owner;
+        document.getElementById('productfc').innerHTML=fc;
+        document.getElementById('productinsurance').innerHTML=insurance;
+        document.getElementById('productPrice').innerText = `${price}`;
+
+
+
+
+
         document.getElementById('productImage').src = img;
+        document.getElementById('thumb1').src = thumb1;
+        document.getElementById('thumb2').src = thumb2;
+        document.getElementById('thumb3').src = thumb3;
+        document.getElementById('thumb1').classList.add('selected-thumbnail'); // Highlight the first thumbnail by default
+
     });
+    // function changeImage(thumbnail) {
+    //     document.getElementById('productImage').src = thumbnail.src;
+    //     const thumbnails = document.querySelectorAll('.thumbnail-img');
+    //     thumbnails.forEach(img => img.classList.remove('selected-thumbnail'));
+    //     thumbnail.classList.add('selected-thumbnail');
+    // }
+    function changeImage(thumbnail) {
+        const productImage = document.getElementById('productImage');
+        
+        productImage.classList.add('fade-left'); // Start fade left animation
+
+        setTimeout(() => {
+            productImage.src = thumbnail.src;
+            productImage.classList.remove('fade-left'); // Remove fade left animation
+            productImage.classList.add('fade-in'); // Start fade in animation
+        }, 500);
+
+        setTimeout(() => {
+            productImage.classList.remove('fade-in'); // Remove fade in animation
+        }, 1000);
+
+        const thumbnails = document.querySelectorAll('.thumbnail-img');
+        thumbnails.forEach(img => img.classList.remove('selected-thumbnail'));
+        thumbnail.classList.add('selected-thumbnail');
+    }
 </script>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>

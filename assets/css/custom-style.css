@@ -104,6 +104,26 @@ text-decoration: dotted;
 background: #ffffff;
 
 } */
+/* .item {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  margin: 0 auto;
+} */
+
+.item img {
+  transition: 0.5s all ease-in-out;
+}
+
+.item:hover img {
+  transform: scale(1.1);
+}
+.bolero img{
+   width: 290px;
+   margin-left: 20%;
+   height: 240px;
+}
+
 @media only screen and (max-width: 600px) {
   nav{
     color: #f9f8f8;
