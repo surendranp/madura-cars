@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Detail</title>
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/madura_car_consultancy-logo.png">
-
     <link rel="stylesheet" href="assets/css/Footer-Multi-Column-icons.css">
     <link rel="stylesheet" href="assets/css/Hero-Carousel-images.css">
     <link rel="stylesheet" href="assets/swt/swt-slider.css">
@@ -82,22 +81,23 @@ transition: 0.5s all ease-in-out;
        
     </div>
     
-        <div class=" col-md-6" style="display: flex;flex-direction: column; justify-content: center; align-items: center;">
-            <div class="thumbnail-images d-flex flex-row justify-content-center">
+        <div class=" col-md-6" style="display: flex; flex-direction: column;">
+            <div class="thumbnail-images d-flex flex-row justify-content-start">
                 <img id="thumb1" src="" class="thumbnail-img img-fluid" width="30%" alt="Thumbnail 1" onclick="changeImage(this)">
                 <img id="thumb2" src="" class="thumbnail-img img-fluid" width="30%" alt="Thumbnail 2" onclick="changeImage(this)">
-                <img id="thumb3" src="" class="thumbnail-img img-fluid" width="10%" alt="Thumbnail 3" onclick="changeImage(this)">
+                <img id="thumb3" src="" class="thumbnail-img img-fluid" width="30%" alt="Thumbnail 3" onclick="changeImage(this)">
             </div>
-            <h5 id="productName" style="text-transform: capitalize; font-size: 32px;" class="card-title"></h5>
-            <p id="productmodal"></p>
-            <p id="productnumber"></p>
-            <p id="productPrice" class="card-text"></p>
-            <p id="productowner" class="card-text"></p>
-            <p id="productfc" class="card-text"></p>
-            <p id="productinsurance" class="card-text"></p>
-            <p id="productDescription" class="card-text">This is a detailed description of the product.</p>
-            <a href="index.html" class="btn btn-secondary mt-3">Back to Products</a>
-
+            <h5 id="productName" style="text-transform: capitalize; font-size: 32px; text-align: left;" class="card-title"></h5>
+            <p id="productmodal" class="text-capitalize  text-align: left;" style="text-align: left;"></p>
+            <p id="productnumber"class="text-capitalize" style="text-align: left;"></p>
+            <p id="productPrice" class="card-text text-capitalize" style="text-align: left;"></p>
+            <p id="productowner" class="card-text text-capitalize" style="text-align: left;"></p>
+            <p id="productfc" class="card-text text-capitalize" style="text-align: left;"></p>
+            <p id="productinsurance" class="card-text text-capitalize" style="text-align: left;"></p>
+            <p id="productDescription" class="card-text text-capitalize" style="text-align: left;">This is a detailed description of the product.</p>
+            <div class="bac_to_product  d-flex justify-content-start">
+            <a href="index.html" class="btn btn-secondary mt-3 mb-5 text-capitalize" >Back to Products</a>
+            </div>
  
         </div>
     </div>
