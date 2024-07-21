@@ -82,11 +82,12 @@ transition: 0.5s all ease-in-out;
     </div>
     
         <div class=" col-md-6" style="display: flex; flex-direction: column;">
-            <div class="thumbnail-images d-flex flex-row justify-content-start">
+            <div class="thumbnail-images d-flex flex-row justify-content-start align-items-md-center">
                 <img id="thumb1" src="" class="thumbnail-img img-fluid" width="30%" alt="Thumbnail 1" onclick="changeImage(this)">
                 <img id="thumb2" src="" class="thumbnail-img img-fluid" width="30%" alt="Thumbnail 2" onclick="changeImage(this)">
                 <img id="thumb3" src="" class="thumbnail-img img-fluid" width="30%" alt="Thumbnail 3" onclick="changeImage(this)">
             </div>
+            <div class="product_box ms-3">
             <h5 id="productName" style="text-transform: capitalize; font-size: 32px; text-align: left;" class="card-title"></h5>
             <p id="productmodal" class="text-capitalize  text-align: left;" style="text-align: left;"></p>
             <p id="productnumber"class="text-capitalize" style="text-align: left;"></p>
@@ -95,78 +96,15 @@ transition: 0.5s all ease-in-out;
             <p id="productfc" class="card-text text-capitalize" style="text-align: left;"></p>
             <p id="productinsurance" class="card-text text-capitalize" style="text-align: left;"></p>
             <p id="productDescription" class="card-text text-capitalize" style="text-align: left;">This is a detailed description of the product.</p>
+
             <div class="bac_to_product  d-flex justify-content-start">
             <a href="index.html" class="btn btn-secondary mt-3 mb-5 text-capitalize" >Back to Products</a>
             </div>
- 
+        </div>
         </div>
     </div>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const name = urlParams.get('name');
-        const price = urlParams.get('price');
-        const img = urlParams.get('img');
-        const modal=urlParams.get('modal');
-        const fc=urlParams.get('fc');
-        const insurance=urlParams.get('insurance');
-        const owner=urlParams.get('owner');
-        const number=urlParams.get('number');
-
-
-
-
-        const thumb1 = urlParams.get('thumb1');
-        const thumb2 = urlParams.get('thumb2');
-        const thumb3 = urlParams.get('thumb3');
-
-        document.getElementById('productName').innerText = name;
-        document.getElementById('productmodal').innerHTML=modal;
-        document.getElementById('productnumber').innerHTML=number;
-        document.getElementById('productowner').innerHTML=owner;
-        document.getElementById('productfc').innerHTML=fc;
-        document.getElementById('productinsurance').innerHTML=insurance;
-        document.getElementById('productPrice').innerText = `${price}`;
-
-
-
-
-
-        document.getElementById('productImage').src = img;
-        document.getElementById('thumb1').src = thumb1;
-        document.getElementById('thumb2').src = thumb2;
-        document.getElementById('thumb3').src = thumb3;
-        document.getElementById('thumb1').classList.add('selected-thumbnail'); // Highlight the first thumbnail by default
-
-    });
-    // function changeImage(thumbnail) {
-    //     document.getElementById('productImage').src = thumbnail.src;
-    //     const thumbnails = document.querySelectorAll('.thumbnail-img');
-    //     thumbnails.forEach(img => img.classList.remove('selected-thumbnail'));
-    //     thumbnail.classList.add('selected-thumbnail');
-    // }
-    function changeImage(thumbnail) {
-        const productImage = document.getElementById('productImage');
-        
-        productImage.classList.add('fade-left'); // Start fade left animation
-
-        setTimeout(() => {
-            productImage.src = thumbnail.src;
-            productImage.classList.remove('fade-left'); // Remove fade left animation
-            productImage.classList.add('fade-in'); // Start fade in animation
-        }, 500);
-
-        setTimeout(() => {
-            productImage.classList.remove('fade-in'); // Remove fade in animation
-        }, 1000);
-
-        const thumbnails = document.querySelectorAll('.thumbnail-img');
-        thumbnails.forEach(img => img.classList.remove('selected-thumbnail'));
-        thumbnail.classList.add('selected-thumbnail');
-    }
-</script>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
