@@ -56,12 +56,45 @@
             opacity: 1;
             transform: translateX(0);
         }
-
+.popage{
+    margin-top: 6.5em;
+}
 </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top  overflow-hidden">
+        <div class="container-fluid pt-3 pb-3  overflow-hidden ">
+            <a class="navbar-brand " href="#"><img src="./assets/images/madura_car_consultancy-logo.png" width="40%" alt=""></a>
+            <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"  aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-<div class="container-fluid mt-5 mb-5" >
+            <div class="offcanvas offcanvas-end overflow-hidden " tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><a class="navbar-brand ms-5" href="#"><img src="./assets/images/madura_car_consultancy-logo.png" width="50%" alt=""></a></h5>
+                  <button type="button" class="btn-close btn-bg-close-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1  ">
+                    <li class="nav-item">
+                        <li class="nav-item">
+                            <a class="nav-link  " data-bss-hover-animate="jello"  href="index.html" id="nav-home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bss-hover-animate="jello" href="#about" id="nav-about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active1" data-bss-hover-animate="jello" href="#services" id="nav-services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bss-hover-animate="jello" href="#contact" id="nav-contact">Contact</a>
+                        </li>
+                        </ul>
+                </div>
+              </div>
+        </div>
+    </nav>
+<div class="container-fluid  mb-5 popage" >
     <div id="productDetail"  class="card d-flex flex-wrap flex-row justify-content-center text-center">
         <div class="col-md-6 product-images ">
         <img id="productImage" src="" class="pt-5 ps-5 pe-5 pb-5 w-100" alt="Product Image">

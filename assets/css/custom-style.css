@@ -121,6 +121,7 @@ text-decoration: dotted;
 .card-body1 a{
   color: #f8f9fa;
   transition: 0.5s all ease-in-out;
+  overflow: hidden;
 }
 .card-body1:hover a{
   transform: scale(1.1);
@@ -199,6 +200,7 @@ border-radius: 5em;
  .card-body1 a{
   width: 50%;
   text-align: center;
+  overflow: hidden;
  }
 
 }
