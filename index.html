@@ -389,16 +389,7 @@
                                       <li class="text-capitalize" data-aos="fade-up" data-aos-delay="300"><b class="text-dark">Comprehensive Body Tinkering:</b>Minor dents, scratches, or collision damage? Our experienced body technicians can restore 
                                         your vehicle to its former glory with meticulous tinkering and repairs.</li>
                                 </ul>
-                                <!-- <h1 class="display-5 fw-bold" data-aos="fade-up" data-aos-delay="50">Why Madura Car Consultancy</h1>
-                                <p data-aos="fade-up" data-aos-delay="100">Looking for a reliable and affordable way to boost your fleet? Look no further than Madura Car Consulting! We specialize in high-quality, pre-owned commercial vehicles, including popular models like Tata Ace, Mahindra Bolero, and Ape.</p>
-                                <p data-aos="fade-up" data-aos-delay="100">Whether you need a maneuverable mini-truck like the Ape for navigating tight city streets or a robust workhorse like the Tata Ace or Mahindra Bolero for tackling tougher jobs, we have the perfect vehicle to fit your needs and budget.</p>
-    
-                                <p data-aos="fade-up" data-aos-delay="100">Our used commercial vehicles undergo rigorous inspections to ensure optimal performance and reliability. You'll benefit from significant savings compared to buying new, without compromising on quality or functionality.</p>
-                                <h4 class="fw-semibold text-muted" data-aos="fade-up" data-aos-delay="150">OUR VALUE</h4>
-                                <p data-aos="fade-up" data-aos-delay="200"><i class="fas fa-arrow-right text-muted"></i>&nbsp; &nbsp;We guaranteed time of pickup without any delay.<br></p>
-                              
-                                <p data-aos="fade-up" data-aos-delay="300"><i class="fas fa-arrow-right text-muted"></i>&nbsp; &nbsp;No hidden charges applied.<br></p> -->
-                                <!-- <a class="btn btn-dark text-light border rounded-5" role="button" data-aos="fade-up" data-aos-delay="350" href="index.html">&nbsp; &nbsp;KNOW MORE&nbsp; &nbsp;</a> -->
+                               
                             </div>
                         </div>
                     </div>
@@ -664,12 +655,21 @@
         document.addEventListener('DOMContentLoaded', function () {
             const offcanvasElement = document.getElementById('offcanvasNavbar');
             const offcanvasLinks = offcanvasElement.querySelectorAll('.nav-link');
+            const body = document.body;
 
             offcanvasLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
                     offcanvas.hide();
+
+                    // Fix for mobile scroll issue by resetting focus
+                    body.focus();
                 });
+            });
+
+            // Reset focus when offcanvas is hidden
+            offcanvasElement.addEventListener('hidden.bs.offcanvas', () => {
+                body.focus();
             });
         });
     </script>
