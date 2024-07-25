@@ -159,10 +159,13 @@ border-radius: 5em;
   /* padding: 12px 16px; */
   cursor: pointer;
 }
-.about_style{
-  /* background-color: #d3a225ad; */
+/* .about_style{
+  width: 100%;
+  height: auto;
+  background-color: #d3a225ad;
   margin-top: 25em;
-}
+  margin-bottom: 0em;
+} */
 
 @media only screen and (max-width: 600px) {
   nav{
@@ -199,13 +202,8 @@ border-radius: 5em;
   height: 20em;
   }
 
-
 }
-@media only screen and (max-width: 600px){
 
-
-
-}
 @media only screen and (max-width: 405px){
 .surya img{
   width: 100%;
@@ -216,7 +214,6 @@ border-radius: 5em;
   margin-left: 15%;
   height: 240px;
 }
-
  .card-title1 {
   width: 80%;
   display: flex;
@@ -236,16 +233,22 @@ border-radius: 5em;
   text-align: center;
   overflow: hidden;
  }
-
- 
 }
-@media only screen and (min-width: 1680px),screen and (max-height: 1050){
+/* @media only screen and (min-width: 350px),screen and (max-height: 700px){
+
+  .about_style{
+   margin-top: 5em;
+ overflow: hidden;
+ background: #000;
+  }
+ } */
+/* @media only screen and (min-width: 1680px),screen and (max-height: 1050px){
 
  .about_style{
-  margin-top: 35em;
-
+  margin-top: 15em;
+overflow: hidden;
  }
-}
+} */
 /* .kQVpYr {
   display: flex;
   flex-direction: column;
