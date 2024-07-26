@@ -36,7 +36,7 @@
                   <button type="button" class="btn-close btn-bg-close-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                  <ul class="navbar-nav justify-content-end flex-grow-1  ">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 ">
                     <li class="nav-item">
                         <li class="nav-item">
                             <a class="nav-link  active1" data-bss-hover-animate="jello"  href="index.html" id="nav-home">Home</a>
@@ -651,26 +651,31 @@
     <script src="assets/js/bs-init.js"></script>
     <script src="https://web3forms.com/client/script.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+          document.addEventListener('DOMContentLoaded', function () {
             const offcanvasElement = document.getElementById('offcanvasNavbar');
             const offcanvasLinks = offcanvasElement.querySelectorAll('.nav-link');
-            const body = document.body;
 
+            // Remove any leftover backdrops after closing
+            const removeOffcanvasBackdrops = () => {
+                document.querySelectorAll('.offcanvas-backdrop').forEach(backdrop => backdrop.remove());
+                document.body.style.overflow = '';
+            };
+
+            // Handle each nav-link click to close offcanvas and manage scroll
             offcanvasLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
                     offcanvas.hide();
 
-                    // Fix for mobile scroll issue by resetting focus
-                    body.focus();
+                    // Ensure the body scrolls properly after offcanvas closes
+                    setTimeout(removeOffcanvasBackdrops, 300); // Wait a bit for animation to finish
                 });
             });
 
-            // Reset focus when offcanvas is hidden
-            offcanvasElement.addEventListener('hidden.bs.offcanvas', () => {
-                body.focus();
-            });
+            // Listen to the 'hidden.bs.offcanvas' event to clean up backdrops
+            offcanvasElement.addEventListener('hidden.bs.offcanvas', removeOffcanvasBackdrops);
         });
     </script>
 </body>
