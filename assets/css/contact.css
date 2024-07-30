@@ -138,3 +138,45 @@ backdrop-filter: blur( 14px );
     display: block;
 }
 /* language translation ----------------*/
+.bi-whatsapp{
+  font-size: 43px;
+  padding-top: 0px;
+  padding-bottom:5px;
+   margin-top: 8px;
+}
+.whatsapp_icon{
+ right:30px; 
+ background-color:#25d366;
+}
+.tel_icon{
+  left:30px;
+   background-color:DodgerBlue; 
+}
+@media only screen and (max-width: 405px){
+  .floating-button {
+    position: fixed;
+    bottom: 150px;
+    right: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    width: 80px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+.whatsapp_icon{
+  right:10px; 
+  background-color:#25d366;
+ }
+ .tel_icon{
+  left:10px;
+   background-color:DodgerBlue; 
+}
+}
