@@ -74,9 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('productPrice').innerText = `${price}`;
 
 
-
-
-
 	document.getElementById('productImage').src = img;
 	document.getElementById('thumb1').src = thumb1;
 	document.getElementById('thumb2').src = thumb2;
@@ -84,12 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('thumb1').classList.add('selected-thumbnail'); // Highlight the first thumbnail by default
 
 });
-// function changeImage(thumbnail) {
-//     document.getElementById('productImage').src = thumbnail.src;
-//     const thumbnails = document.querySelectorAll('.thumbnail-img');
-//     thumbnails.forEach(img => img.classList.remove('selected-thumbnail'));
-//     thumbnail.classList.add('selected-thumbnail');
-// }
+// --------------------------------------------
 function changeImage(thumbnail) {
 	const productImage = document.getElementById('productImage');
 	
@@ -109,3 +101,53 @@ function changeImage(thumbnail) {
 	thumbnails.forEach(img => img.classList.remove('selected-thumbnail'));
 	thumbnail.classList.add('selected-thumbnail');
 }
+// ----------------------------
+// function for closing OffscreenCanvas
+document.addEventListener('DOMContentLoaded', function () {
+	const offcanvasElement = document.getElementById('offcanvasNavbar');
+	const offcanvasLinks = offcanvasElement.querySelectorAll('.nav-link');
+
+	// Remove any leftover backdrops after closing
+	const removeOffcanvasBackdrops = () => {
+		document.querySelectorAll('.offcanvas-backdrop').forEach(backdrop => backdrop.remove());
+		document.body.style.overflow = '';
+	};
+
+	// Handle each nav-link click to close offcanvas and manage scroll
+	offcanvasLinks.forEach(link => {
+		link.addEventListener('click', () => {
+			const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+			offcanvas.hide();
+
+			// Ensure the body scrolls properly after offcanvas closes
+			setTimeout(removeOffcanvasBackdrops, 300); // Wait a bit for animation to finish
+		});
+	});
+
+	// Listen to the 'hidden.bs.offcanvas' event to clean up backdrops
+	offcanvasElement.addEventListener('hidden.bs.offcanvas', removeOffcanvasBackdrops);
+});
+// -----------------------------
+//  Language Translation
+
+    let currentLanguage = 'english'; // Default language is English
+
+    function toggleLanguage() {
+        const englishContents = document.querySelectorAll('.language-container.english');
+        const TamilContents = document.querySelectorAll('.language-container.Tamil');
+        const button = document.querySelector('.floating-button');
+        
+        if (currentLanguage === 'english') {
+            englishContents.forEach(content => content.classList.remove('active'));
+            TamilContents.forEach(content => content.classList.add('active'));
+            button.innerText = 'English';
+            currentLanguage = 'Tamil';
+        } else {
+            TamilContents.forEach(content => content.classList.remove('active'));
+            englishContents.forEach(content => content.classList.add('active'));
+            button.innerText = 'தமிழ்';
+            currentLanguage = 'english';
+        }
+    }
+
+	// -------------------------------
