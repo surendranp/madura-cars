@@ -225,7 +225,9 @@ border-radius: 5em;
   text-align: center;
   overflow: hidden;
  }
- 
+ .about_img img{
+  margin-bottom: 1em;
+ }
 }
 /* @media only screen and (min-width: 350px),screen and (max-height: 700px){
 
