@@ -24,6 +24,15 @@
     <link rel="stylesheet" href="assets/css/Hero-Carousel-images.css">
     <link rel="stylesheet" href="assets/swt/swt-slider.css">
     <link rel="stylesheet" href="./assets/css/contact.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DW54Q93HHP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DW54Q93HHP');
+</script>
 <style>
     body{
         background: #000;
@@ -94,6 +103,7 @@
               </div>
         </div>
     </nav>
+    <button class="floating-button" onclick="toggleLanguage()">தமிழ்</button>
 <div class="container-fluid  mb-5 popage" >
     <div id="productDetail"  class="card d-flex flex-wrap flex-row justify-content-center text-center">
         <div class="col-md-6 product-images ">
@@ -115,10 +125,11 @@
             <p id="productowner" class="card-text text-capitalize" style="text-align: left;"></p>
             <p id="productfc" class="card-text text-capitalize" style="text-align: left;"></p>
             <p id="productinsurance" class="card-text text-capitalize" style="text-align: left;"></p>
-            <p id="productDescription" class="card-text text-capitalize pe-3" style="text-align: left;">you want to need more detailed description of the product please click the contact or whatsapp icon.</p>
-
+            
+            <p id="productDescription" class="card-text text-capitalize pe-3 language-container english active" style="text-align: left;">you want to need more detailed description of the product please click the contact or whatsapp icon.</p>
+            <p id="productDescription" class="card-text text-capitalize pe-3 language-container Tamil " style="text-align: left;">வாகனத்தைப் பற்றிய மேலும் தகவல்கள் உங்களுக்கு வேண்டும் என்றால் திரையில் தோன்றும் Phone அல்லது Whatsapp பட்டனை கிளிக் செய்யவும்.</p>
             <div class="bac_to_product  d-flex justify-content-start">
-            <a href="index.html" class="btn btn-secondary mt-3 mb-5 text-capitalize" >Back to Products</a>
+            <a href="index.html" class="btn btn-secondary mt-3 mb-5 text-capitalize" >Back to Home</a>
             </div>
         </div>
         </div>
@@ -162,9 +173,8 @@
                     <li><a  href="#" >Address: Madura car consultancy, Eswari complex, Melur Main Rd, opposite to ACC Mahal, Otthakadai, Madurai, Anbu Nagar, Tamil Nadu 625107</a></li>
                 </ul>
                 <div>
-                    <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/MaduraCarConsultancy?mibextid=ZbWKwL" class="text-white me-2 "><i class="fab fa-facebook-f"></i></a>
+
                 </div>
             </div>
         </div>
