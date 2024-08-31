@@ -58,9 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	const owner=urlParams.get('owner');
 	const number=urlParams.get('number');
 
-
-
-
 	const thumb1 = urlParams.get('thumb1');
 	const thumb2 = urlParams.get('thumb2');
 	const thumb3 = urlParams.get('thumb3');
